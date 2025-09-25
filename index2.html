@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#48A845" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+
+    <!--RemixIcon CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--Data AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>NACOS Quiz</title>
+    <script src="app2.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#48A845",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        padding: 0 2em;
+        background: linear-gradient(to right, #111827d5, #111827f5),
+          url("/assets/background.jpg") top/cover no-repeat;
+      }
+
+      .featured {
+        /*font-family: "Sour Gummy", sans-serif; */
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      .skeleton {
+        background: linear-gradient(
+          90deg,
+          #2d3748 25%,
+          #4a5568 50%,
+          #2d3748 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite linear;
+        border-radius: 8px;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Number Selection Page -->
+    <div
+      id="number-selection"
+      class="relative flex flex-col items-center justify-center min-h-screen"
+    >
+      <div class="relative z-10 text-center">
+        <div class="featured flex items-center flex-col gap-4">
+          <img class="w-12 lg:w-20" src="/assets/logo.png" alt="" />
+          <h1
+            data-aos="fade-right"
+            data-aos-duration="500"
+            class="text-2xl md:text-4xl font-extrabold text-white"
+            style="-webkit-text-stroke: 1px #48a845"
+          >
+            NACOS CyberSmart kahoot!
+          </h1>
+        </div>
+        <p
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          class="text-sm md:text-base mt-2 text-gray-300"
+        >
+          Be cybersafe, one Kahoot at a time. <br>
+          <span class="block mt-2 text-green-400 font-semibold">Malware can’t get you here—only wrong answers can!</span>
+        </p>
+        <div id="numbers" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6 mt-6"></div>
+      </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div
+      id="quiz-page"
+      class="hidden relative flex flex-col items-center justify-center min-h-screen"
+    >
+      <div class="featured flex items-center flex-col gap-4">
+        <img class="w-12 lg:w-20" src="/assets/logo.png" alt="" />
+        <h1
+          class="text-2xl md:text-4xl font-extrabold text-white"
+          style="-webkit-text-stroke: 1px #48a845"
+        >
+          NACOS CyberSmart Kahoot!
+        </h1>
+      </div>
+      <div class="relative z-10 w-full max-w-lg bg-opacity-50 mt-10">
+        <h2
+          class="featured text-xl font-bold text-primary"
+          id="quiz-title"
+        ></h2>
+        <p id="quiz-question" class="md:text-lg mt-4 text-gray-400"></p>
+        <div id="quiz-options" class="mt-6"></div>
+        <p id="result" class="mt-4 text-lg font-bold"></p>
+        <div class="text-center">
+          <button
+            id="next-btn"
+            class="mt-6 px-6 py-2 border border-2 border-green-500 text-green-500 rounded-full hover:bg-green-900"
+          >
+            Next Question
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer -->
+    <footer
+      class="fixed bottom-5 left-0 right-0 w-full flex justify-center text-xs md:text-base"
+    >
+      <p class="text-gray-400">
+        Developed by
+        <a
+          href="https://github.com/Treasure-Carl"
+          target="_blank"
+          class="text-green-500/70 font-bold"
+          >CWS{The_Bakeery} <i class="ri-github-fill text-xl"></i
+        ></a>
+      </p>
+    </footer>
+
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
+</html>
