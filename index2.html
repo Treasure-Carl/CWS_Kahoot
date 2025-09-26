@@ -36,9 +36,15 @@
 
       body {
         font-family: "Poppins", sans-serif;
-        padding: 0 2em;
+        padding: 0 1rem;
         background: linear-gradient(to right, #111827d5, #111827f5),
           url("/assets/background.jpg") top/cover no-repeat;
+      }
+      
+      @media (min-width: 768px) {
+        body {
+          padding: 0 2rem;
+        }
       }
 
       .featured {
@@ -112,7 +118,7 @@
           NACOS CyberSmart Kahoot!
         </h1>
       </div>
-      <div class="relative z-10 w-full max-w-lg bg-opacity-50 mt-10">
+      <div class="relative z-10 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl bg-opacity-50 mt-10 px-4">
         <h2
           class="featured text-xl font-bold text-primary"
           id="quiz-title"
